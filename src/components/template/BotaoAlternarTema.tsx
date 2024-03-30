@@ -1,3 +1,4 @@
+
 import { IconeLua, IconeSol } from "../icons";
 
 interface BotaoAlternarTemaProps {

@@ -1,13 +1,21 @@
+'use client'
+
 import AuthInput from "@/components/auth/AuthInput";
-import "../app/globals.css";
+// import "../app/globals.css";
 import "tailwindcss/tailwind.css";
 import { useState } from "react";
 import Image from "next/image";
+import Layout from '../../../components/template/Layout'
+import '../../globals.css'
+import 'tailwindcss/tailwind.css'
 
-import Traveling from '../../public/Traveling.png'
+import Traveling from '../../../../public/Traveling.png'
 import { IconeAtencao } from "@/components/icons";
+import useAuth from "@/data/hook/useAuth";
 
 export default function Autenticacao() {
+  const { cadastrar, login, loginGoogle} = useAuth()
+  
   const [modo, setModo] = useState<"login" | "cadastro">("login");
   const [erro, setErro] = useState(null);
   const [email, setEmail] = useState("");
@@ -22,12 +30,13 @@ export default function Autenticacao() {
     try {
       if (modo === "login") {
         exibirErro('Ocorreu um erro no Login!')
-        // await login(email, senha)
+        await login(email, senha)
       } else {
-        // await cadastrar(email, senha)
+        await cadastrar(email, senha)
         exibirErro('Ocorreu um erro no Cadastro!')
       }
-    } catch (e) {
+    } catch {
+      // exibirErro('erro desconhecido')
       // exibirErro(e?.message ?? 'Erro desconhecido!')
     }
   }
@@ -87,7 +96,7 @@ export default function Autenticacao() {
         </button>
         <hr className="my-6 border-gray-300 w-full" />
         <button
-          //   onClick={loginGoogle}
+            onClick={loginGoogle}
           className={`
                     w-full bg-red-500 hover:bg-red-400
                     text-white rounded-lg px-4 py-3

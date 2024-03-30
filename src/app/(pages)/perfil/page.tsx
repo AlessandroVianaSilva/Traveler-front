@@ -1,5 +1,6 @@
-import Layout from '../components/template/Layout'
-import '../app/globals.css'
+"use client"
+import Layout from '../../../components/template/Layout'
+import '../../globals.css'
 import 'tailwindcss/tailwind.css'
 
 export default function Perfil() {

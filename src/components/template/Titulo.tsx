@@ -1,4 +1,4 @@
-import MenuLateral from './MenuLateral'
+// import MenuLateral from './MenuLateral'
 
 interface TituloProps {
     titulo: string

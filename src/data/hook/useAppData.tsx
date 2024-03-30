@@ -1,6 +1,8 @@
-// import { useContext } from "react";
-// import AppContext from '../context/AppContext'
+"use client"
 
-// const useAppData = () => useContext(AppContext)
+import { useContext } from "react";
+import AppContext from '../context/AppContext'
 
-// export default useAppData
+const useAppData = () => useContext(AppContext)
+
+export default useAppData

@@ -1,9 +1,11 @@
+// "use client"
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import 'tailwindcss/tailwind.css'
 import "./globals.css";
-// import AuthContext, { AuthProvider } from "@/data/context/AuthContext";
-// import { AppProvider } from "@/data/context/AppContext";
+import AuthContext, { AuthProvider } from "@/data/context/AuthContext";
+import { AppProvider } from "@/data/context/AppContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +18,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <AuthProvider>
-    
+    <AuthProvider>
+    <AppProvider>
+
     <html lang="en">
-      <body >{children}</body>
+      <body >
+        {children}
+        </body>
     </html>
-    // </AuthProvider>
+    </AppProvider>
+    </AuthProvider>
   );
 }
 
