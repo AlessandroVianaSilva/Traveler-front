@@ -6,7 +6,7 @@ import router, { useRouter } from 'next/navigation'
 import loading from '../../../public/loading.gif'
 import useAuth from '../../data/hook/useAuth'
 
-export default function ForcarAutenticacao(props) {
+export default function ForcarAutenticacao(props: { children: any }) {
     const router = useRouter()
 
     const { usuario, carregando } = useAuth()
@@ -46,15 +46,6 @@ export default function ForcarAutenticacao(props) {
             </div>
         )
     }
-
-    // if(!carregando && usuario?.email) {
-    //     return renderizarConteudo()
-    // } else if(carregando) {
-    //     return renderizarCarregando()
-    // } else {
-    //     router.push('/autenticacao')
-    //     return null
-    // }
 
     if(carregando) {
         return renderizarCarregando()

@@ -17,17 +17,17 @@ export default function MenuLateral() {
         `}>
             <div className={`
                 flex flex-col items-center justify-center
-                bg-gray-500
+                 bg-gray-500
                 h-20 w-20
             `}>
 
+            <Logo />
             </div>
-            {/* <Logo /> */}
             <ul className="flex-grow">
                 <MenuItem url="/" texto="Inicio" icone={IconeCasa}/>
-                <MenuItem url="/ajustes" texto="Ajustes" icone={IconeAjustes}/>
-                <MenuItem url="/perfil" texto="Perfil" icone={IconePerfil}/>
                 <MenuItem url="/minhasviagens" texto="Viagens" icone={IconeMinhasViagens}/>
+                <MenuItem url="/perfil" texto="Perfil" icone={IconePerfil}/>
+                <MenuItem url="/ajustes" texto="Ajustes" icone={IconeAjustes}/>
             </ul>
             <ul>
                 <MenuItem

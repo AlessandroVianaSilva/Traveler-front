@@ -29,14 +29,14 @@ export default function Autenticacao() {
   async function submit() {
     try {
       if (modo === "login") {
-        exibirErro('Ocorreu um erro no Login!')
+        // exibirErro('Ocorreu um erro no Login!')
         await login(email, senha)
       } else {
         await cadastrar(email, senha)
-        exibirErro('Ocorreu um erro no Cadastro!')
+        // exibirErro('Ocorreu um erro no Cadastro!')
       }
     } catch {
-      // exibirErro('erro desconhecido')
+      exibirErro('erro desconhecido')
       // exibirErro(e?.message ?? 'Erro desconhecido!')
     }
   }

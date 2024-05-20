@@ -25,10 +25,13 @@ export default function MenuItem(props: MenuItemProps) {
         )
     }
     return (
-        <li onClick={props.onClick} className={`
+        <li onClick={props.onClick} 
+        className={`
             hover:bg-gray-100 dark:hover:bg-gray-800
             cursor-pointer
-        `}>
+        `
+        
+        }>
             {props.url ? (
                 <Link legacyBehavior href={props.url}>
                     {renderizarLink()}

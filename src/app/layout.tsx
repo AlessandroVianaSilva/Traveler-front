@@ -1,11 +1,15 @@
 // "use client"
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import 'tailwindcss/tailwind.css'
+import "slick-carousel/slick/slick.css";
 import "./globals.css";
 import AuthContext, { AuthProvider } from "@/data/context/AuthContext";
 import { AppProvider } from "@/data/context/AppContext";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ForcarAutenticacao from "@/components/auth/ForcarAutenticacao";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,16 +22,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+      // <ForcarAutenticacao>
     <AuthProvider>
-    <AppProvider>
+
 
     <html lang="en">
-      <body >
+      <body className="bg-gray-300">
+        {/* <Header/> */}
         {children}
+        {/* <Footer/> */}
         </body>
     </html>
-    </AppProvider>
+
     </AuthProvider>
+      // </ForcarAutenticacao>
+ 
+ 
+    //  <html lang="en">
+    //    <body  className="bg-gray-300">
+    //      <Header/>
+    //      {children}
+    //      <Footer/>
+    //      </body>
+    //  </html>
   );
 }
 

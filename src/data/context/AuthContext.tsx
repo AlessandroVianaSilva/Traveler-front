@@ -102,7 +102,7 @@ export function AuthProvider(props) {
     async function logout(){
         try{
             setCarregando(true)
-            await firebase.auth().signOut()
+            // await firebase.auth().signOut()
             await configurarSessao(null)
             router.push('/autenticacao')
         } finally{
